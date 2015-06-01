@@ -9,11 +9,11 @@ phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/phones', {
-        templateUrl: 'partials/phone-list.html',
+        templateUrl: '/PhoneCat/static/templates/phone-list.html',
         controller: 'PhoneListCtrl'
       }).
       when('/phones/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
+        templateUrl: '/PhoneCat/static/templates/phone-detail.html',
         controller: 'PhoneDetailCtrl'
       }).
       otherwise({
