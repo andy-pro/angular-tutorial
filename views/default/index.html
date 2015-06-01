@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="<?=URL('static','css/bootstrap.min.css')?>">
+  <link rel="stylesheet" href="<?=URL('static','css/app.css')?>">
+  <script src="<?=URL('static','js/angular.min.js')?>"></script>
+  <script type="text/javascript">
+    <?include 'default/controllers.js'?>
+  </script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+Search: <input ng-model="query">
+Sort by:
+<select ng-model="orderProp">
+  <option value="name">Alphabetical</option>
+  <option value="age">Самые новые</option>
+</select>
+
+<ul class="phones">
+  <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+    <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="/PhoneCat/static/{{phone.imageUrl}}"></a>
+    <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+    <p>{{phone.snippet}}</p>
+  </li>
+</ul>
+
+<!--<pre>{{phones | filter:query | orderBy:orderProp | json}}</pre>-->
+
+</body>
+</html>
+</html>
