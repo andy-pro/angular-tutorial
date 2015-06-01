@@ -1,15 +1,9 @@
-'use strict';
-
-/* App Module */
-
 var phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
-  'phonecatAnimations',
-
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices'
-]);
+  'phonecatControllers'
+]
+//  ,function ($interpolateProvider){ $interpolateProvider.startSymbol('<{'); $interpolateProvider.endSymbol('}>'); });
+);
 
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {

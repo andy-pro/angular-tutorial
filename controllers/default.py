@@ -12,6 +12,9 @@ def index():
     response.delimiters = ('<?', '?>')
     return dict()
 
+def ajax_getPhones():
+    return phones_json
+
 def user():
     """
     exposes:
